@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO and Social Sharing Meta Tags -->
+    <title>Funmilayo & Damilare's Wedding | #AYDIRE25</title>
+    <meta name="description" content="Join Funmilayo and Damilare as they celebrate their love and begin their new life together. Find all the details for the wedding ceremony on December 13, 2025." />
+    <link rel="canonical" href="https://myevent.i.ng" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://myevent.i.ng" />
+    <meta property="og:title" content="Funmilayo & Damilare's Wedding | #AYDIRE25" />
+    <meta property="og:description" content="Celebrating the wedding of Funmilayo Gbolasere and Damilare Afeniforo. Find all the details for our special day!" />
+    <meta property="og:image" content="/images/SEO.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://myevent.i.ng" />
+    <meta property="twitter:title" content="Funmilayo & Damilare's Wedding | #AYDIRE25" />
+    <meta property="twitter:description" content="Celebrating the wedding of Funmilayo Gbolasere and Damilare Afeniforo. Find all the details for our special day!" />
+    <meta property="twitter:image" content="/images/SEO.jpg" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #4A2C2A; /* A deep chocolate color */
+        color: #FDF8F0; /* A soft cream color */
+      }
+      .font-playfair {
+        font-family: 'Playfair Display', serif;
+      }
+      .font-montserrat {
+        font-family: 'Montserrat', sans-serif;
+      }
+      .gold-text {
+        color: #D4AF37;
+      }
+      .bg-chocolate {
+        background-color: #4A2C2A;
+      }
+      .bg-cream {
+        background-color: #FDF8F0;
+      }
+      .text-chocolate {
+        color: #4A2C2A;
+      }
+       /* Scrollbar Styles */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #4A2C2A;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #D4AF37;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #b89b3f;
+      }
+      
+      .scroll-watcher {
+        height: 10px;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        background-color: #D4AF37;
+        width: 100%;
+        scale: 0 1;
+        transform-origin: left;
+        animation: scroll-watcher linear;
+        animation-timeline: scroll();
+      }
+
+      @keyframes scroll-watcher {
+        to { scale: 1 1; }
+      }
+      
+      /* Base Animation classes */
+      .fade-in-section {
+        animation: fade-in-up linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;
+      }
+
+      .title-fade-in {
+        animation: fade-in-up linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;
+      }
+
+       @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Hero Animation Keyframes */
+      @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes heroFadeIn { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes heroFadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+      
+      .animate-fade-in-down { animation: fadeInDown 1s ease-out forwards; }
+      .animate-fade-in { animation: heroFadeIn 1s ease-out forwards; }
+      .animate-fade-in-up { animation: heroFadeInUp 1s ease-out forwards; }
+      
+      @keyframes kenburns {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.1);
+        }
+      }
+
+      /* Hero Slider */
+      .hero-bg-slider {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        filter: grayscale(100%);
+        opacity: 0;
+        transition: opacity 2.5s ease-in-out;
+        transform: scale(1.1);
+      }
+      .hero-bg.active {
+        opacity: 1;
+        animation: kenburns 7s ease-out forwards;
+      }
+
+      /* Photo Carousel */
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        max-width: 600px; /* Adjust max-width as needed */
+        margin: auto;
+        overflow: hidden;
+      }
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      .carousel-slide {
+        flex: 0 0 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+        padding: 0 1rem;
+        cursor: pointer;
+      }
+      .carousel-slide img {
+        width: 100%;
+        border-radius: 0.5rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        object-fit: cover;
+        aspect-ratio: 4/5;
+        transition: transform 0.3s ease;
+      }
+      .carousel-slide:hover img {
+        transform: scale(1.03);
+      }
+      .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(253, 248, 240, 0.8);
+        color: #4A2C2A;
+        border: none;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        transition: background-color 0.2s;
+      }
+      .carousel-arrow:hover {
+        background-color: #FDF8F0;
+      }
+      @media (max-width: 767px) {
+        .carousel-arrow.prev { left: 1.5rem; }
+        .carousel-arrow.next { right: 1.5rem; }
+      }
+
+      @media (min-width: 768px) {
+        .carousel-arrow.prev { left: -60px; }
+        .carousel-arrow.next { right: -60px; }
+      }
+      .carousel-dots {
+        text-align: center;
+        margin-top: 1.5rem;
+      }
+      .carousel-dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        background-color: rgba(253, 248, 240, 0.4);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .carousel-dot.active {
+        background-color: #D4AF37;
+      }
+      
+      /* Video Section */
+      .video-frame-container {
+        max-width: 380px;
+        width: 100%;
+      }
+      .video-frame {
+        position: relative;
+        padding-top: 177.77%; /* 9:16 aspect ratio */
+        background-color: #2a1a19;
+        border-radius: 1.5rem;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 0 8px #d4af37;
+        overflow: hidden;
+      }
+      .video-frame iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        border-radius: 1.25rem;
+      }
+
+      /* Guestbook Section */
+      .guestbook-embed-container {
+        width: 100%;
+        max-width: 800px;
+        margin: 2rem auto 0 auto;
+        background: #FDF8F0;
+        border-radius: 1rem;
+        padding: 1rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      }
+      .guestbook-embed-container iframe {
+        width: 100%;
+        border: none;
+        border-radius: 0.5rem;
+      }
+      .guestbook-form-embed {
+        height: 520px;
+      }
+      @media (min-width: 768px) {
+        .guestbook-form-embed {
+          height: 420px;
+        }
+      }
+      .guestbook-gallery-embed {
+         /* Adjust height as needed, or use aspect-ratio */
+        aspect-ratio: 1 / 1.2;
+        min-height: 600px;
+      }
+
+      /* Image Modal */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+      .modal-overlay.open {
+        opacity: 1;
+      }
+      .modal-content {
+        position: relative;
+        max-width: 90vw;
+        max-height: 90vh;
+        transform: scale(0.9);
+        opacity: 0;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      }
+      .modal-overlay.open .modal-content {
+        transform: scale(1);
+        opacity: 1;
+      }
+      .modal-content img {
+        max-width: 100%;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 0.5rem;
+      }
+      .modal-close, .modal-nav {
+        position: absolute;
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        cursor: pointer;
+        z-index: 101;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s;
+      }
+      .modal-close:hover, .modal-nav:hover {
+        background-color: rgba(0,0,0,0.8);
+      }
+      .modal-close {
+        top: 1rem;
+        right: 1rem;
+      }
+      .modal-nav.prev {
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .modal-nav.next {
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      /* Mobile Menu Animation */
+      @keyframes mobileMenuFadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-mobile-menu-fade-in {
+        animation: mobileMenuFadeIn 0.3s ease-in-out forwards;
+      }
+
+      @keyframes mobileLinkFadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-mobile-link-fade-up {
+        opacity: 0; 
+        animation: mobileLinkFadeUp 0.4s ease-out forwards;
+      }
+
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div class="scroll-watcher"></div>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
