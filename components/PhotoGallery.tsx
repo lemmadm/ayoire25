@@ -3,8 +3,6 @@ import SectionWrapper from './SectionWrapper';
 import ImageModal from './ImageModal';
 
 const galleryImages = [
-    '/images/IMG_8517.JPG',
-    '/images/IMG_9182.jpg',
     '/images/IMG_9784.JPG',
     '/images/IMG_9791.JPG',
     '/images/IMG_9818.JPG',
@@ -13,6 +11,7 @@ const galleryImages = [
     '/images/IMG_9960.JPG',
     '/images/IMG_9973.JPG',
     '/images/IMG_9827-Edit.JPG',
+    '/images/IMG_9182.jpg',
 ];
 
 const PhotoGallery: React.FC = () => {
