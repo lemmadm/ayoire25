@@ -14,17 +14,17 @@ const MoreAboutUs: React.FC = () => {
         <SectionWrapper id="more-about-us" className="bg-cream text-chocolate">
             <div className="container mx-auto text-center">
                 <h2 
-                  className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-4 gold-text title-fade-in"
+                  className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-4 gold-text"
                 >
                   More About Us
                 </h2>
-                <p className="font-montserrat text-base md:text-lg max-w-3xl mx-auto mb-16">A little glimpse into our hearts and what we cherish.</p>
+                <p className="font-montserrat text-base md:text-lg max-w-3xl mx-auto mb-16 leading-relaxed">A little glimpse into our hearts and what we cherish.</p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     {qnaData.map((item, index) => (
                         <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-left">
                             <h3 className="font-playfair text-xl font-bold gold-text mb-2">{item.question}</h3>
-                            <p className="font-montserrat text-gray-700 text-sm md:text-base">{item.answer}</p>
+                            <p className="font-montserrat text-gray-700 text-sm md:text-base leading-relaxed">{item.answer}</p>
                         </div>
                     ))}
                 </div>

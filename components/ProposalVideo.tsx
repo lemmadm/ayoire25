@@ -9,11 +9,11 @@ const ProposalVideo: React.FC = () => {
     <SectionWrapper id="proposal-video" className="bg-cream text-chocolate">
       <div className="container mx-auto text-center">
         <h2 
-          className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-4 gold-text title-fade-in"
+          className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-4 gold-text"
         >
           The Proposal
         </h2>
-        <p className="font-montserrat text-base md:text-lg max-w-3xl mx-auto mb-16">A moment we'll cherish forever, captured on film.</p>
+        <p className="font-montserrat text-base md:text-lg max-w-3xl mx-auto mb-16 leading-relaxed">A moment we'll cherish forever, captured on film.</p>
         
         <div className="video-frame-container mx-auto">
           <div className="video-frame">

@@ -23,11 +23,11 @@ const EventDetails: React.FC = () => {
             <div className="absolute inset-0 bg-chocolate opacity-70"></div>
             <div className="container mx-auto relative z-10 text-center">
                 <h2 
-                  className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-4 gold-text title-fade-in"
+                  className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-4 gold-text"
                 >
                   The Wedding
                 </h2>
-                <p className="font-montserrat text-base md:text-lg max-w-3xl mx-auto mb-12">Join us as we celebrate our union and begin our new life together.</p>
+                <p className="font-montserrat text-base md:text-lg max-w-3xl mx-auto mb-12 leading-relaxed">Join us as we celebrate our union and begin our new life together.</p>
                 
                 <div className="font-playfair text-lg md:text-xl max-w-3xl mx-auto mb-12 italic">
                     <p>The Families of Gbolasere & Afeniforo</p>

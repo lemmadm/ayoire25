@@ -35,11 +35,11 @@ const Guestbook: React.FC = () => {
     <SectionWrapper id="guestbook" className="bg-cream text-chocolate">
       <div className="container mx-auto text-center">
         <h2 
-          className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-4 gold-text title-fade-in"
+          className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-4 gold-text"
         >
           Virtual Guestbook
         </h2>
-        <p className="font-montserrat text-base md:text-lg max-w-3xl mx-auto mb-10">
+        <p className="font-montserrat text-base md:text-lg max-w-3xl mx-auto mb-10 leading-relaxed">
           Leave us a message, a prayer, or a word of advice as we start our new journey together. We'd love to hear from you!
         </p>
 
@@ -55,7 +55,7 @@ const Guestbook: React.FC = () => {
             <h3 className="font-playfair text-3xl md:text-4xl font-bold gold-text">
                 A Wall of Wishes
             </h3>
-            <p className="font-montserrat text-base md:text-lg max-w-2xl mx-auto mt-2 mb-10">
+            <p className="font-montserrat text-base md:text-lg max-w-2xl mx-auto mt-2 mb-10 leading-relaxed">
                 Thank you for all the love and support from our amazing family and friends.
             </p>
             <div className="guestbook-embed-container">

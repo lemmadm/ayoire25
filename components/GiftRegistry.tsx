@@ -16,12 +16,12 @@ const GiftRegistry: React.FC = () => {
         <SectionWrapper id="gift-registry">
             <div className="container mx-auto text-center max-w-3xl">
                 <h2 
-                  className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-4 gold-text title-fade-in"
+                  className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-4 gold-text"
                 >
                   Gift Registry
                 </h2>
-                <p className="font-montserrat text-base md:text-lg mb-8">
-                    Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a gift, a cash contribution to our future would be deeply appreciated.
+                <p className="font-montserrat text-base md:text-lg mb-8 leading-relaxed">
+                    Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a gift, please see below details. God bless you.
                 </p>
                 
                 <div className="bg-cream text-chocolate p-8 rounded-lg shadow-xl inline-block">

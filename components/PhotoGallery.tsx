@@ -3,28 +3,26 @@ import SectionWrapper from './SectionWrapper';
 import ImageModal from './ImageModal';
 
 const galleryImages = [
-    'public/images/IMG_9818.JPG',
-    'public/images/IMG_9913.JPG',
-    'public/images/IMG_9943.JPG',
-    'public/images/IMG_9960.JPG',
-    'public/images/IMG_9973.JPG',
-    'public/images/IMG_9827-Edit.JPG',
-    'public/images/IMG_9182.jpg',
-    'public/images/IMG_9791.JPG',
+    { src: 'https://drive.google.com/file/d/1maqwtKOa0s0Em2o15xGnji0P056VQyX1/view?usp=drive_link', caption: 'Moment of Proposal' },
+    { src: 'https://drive.google.com/file/d/1XqKrOxfWj6ofwChsheXzPo5tY2XMNPDL/view?usp=drive_link', caption: 'Behold Love in the Eyes' },
+    { src: 'https://drive.google.com/file/d/19Kh4wje71_oHUWZO5Ax6Z8tlYKmAaOSA/view?usp=drive_link', caption: 'At the sholder of Trust' },
+    { src: 'https://drive.google.com/file/d/1Jq-kP6yuF7GAGRtH7xi_9r7mDd6oK1e1/view?usp=drive_link', caption: 'Perfect Match' },
+    { src: 'https://drive.google.com/file/d/1GjvfcLjh9W2n8teDgAi1tOGut6ekKs7v/view?usp=drive_link', caption: 'Joy of the Heart' },
+    { src: 'https://drive.google.com/file/d/1J1lKwMklPcm4Y2444eLiOi1T3f33_exI/view?usp=drive_link', caption: 'First of all Introduction' },
+    { src: 'https://drive.google.com/file/d/1PoeLO84-CKgEkYyEjeOuGbUSAgkkHhyV/view?usp=drive_link', caption: 'Will you marry me' },
+    { src: 'https://drive.google.com/file/d/1oO3v8iwZ1nltJQgJshY8qNweN0NMl-IU/view?usp=drive_link', caption: 'I Love You my Dear' },
 ];
 
 const PhotoGallery: React.FC = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
-    const [currentSlide, setCurrentSlide] = useState(0);
+
+    const isModalOpen = selectedImageIndex !== null;
 
     const openModal = (index: number) => {
         setSelectedImageIndex(index);
-        setIsModalOpen(true);
     };
 
     const closeModal = () => {
-        setIsModalOpen(false);
         setSelectedImageIndex(null);
     };
 
@@ -32,7 +30,6 @@ const PhotoGallery: React.FC = () => {
         if (selectedImageIndex !== null) {
             const nextIndex = (selectedImageIndex + 1) % galleryImages.length;
             setSelectedImageIndex(nextIndex);
-            setCurrentSlide(nextIndex);
         }
     };
     
@@ -40,55 +37,24 @@ const PhotoGallery: React.FC = () => {
         if (selectedImageIndex !== null) {
             const prevIndex = (selectedImageIndex - 1 + galleryImages.length) % galleryImages.length;
             setSelectedImageIndex(prevIndex);
-            setCurrentSlide(prevIndex);
         }
-    };
-
-    const handleNextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % galleryImages.length);
-    };
-
-    const handlePrevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
     };
 
     return (
         <SectionWrapper id="gallery">
             <div className="container mx-auto text-center">
                 <h2 
-                  className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-4 gold-text title-fade-in"
+                  className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-4 gold-text"
                 >
                   Our Journey in Photos
                 </h2>
-                <p className="font-montserrat text-base md:text-lg max-w-3xl mx-auto mb-16">A collection of moments that have shaped our story.</p>
+                <p className="font-montserrat text-base md:text-lg max-w-3xl mx-auto mb-16 leading-relaxed">A collection of moments that have shaped our story.</p>
                 
-                <div className="carousel-container">
-                    <div 
-                        className="carousel-track" 
-                        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                    >
-                        {galleryImages.map((src, index) => (
-                            <div key={index} className="carousel-slide" onClick={() => openModal(index)}>
-                                <img src={src} alt={`Gallery image ${index + 1}`} loading="lazy" />
-                            </div>
-                        ))}
-                    </div>
-                    <button onClick={handlePrevSlide} className="carousel-arrow prev" aria-label="Previous photo">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-                    </button>
-                    <button onClick={handleNextSlide} className="carousel-arrow next" aria-label="Next photo">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                    </button>
-                </div>
-                
-                <div className="carousel-dots">
-                    {galleryImages.map((_, index) => (
-                        <button 
-                            key={index}
-                            className={`carousel-dot ${currentSlide === index ? 'active' : ''}`}
-                            onClick={() => setCurrentSlide(index)}
-                            aria-label={`Go to photo ${index + 1}`}
-                        />
+                <div className="masonry-grid">
+                    {galleryImages.map((image, index) => (
+                        <div key={index} className="masonry-item" onClick={() => openModal(index)}>
+                            <img src={image.src} alt={`Gallery image ${index + 1}`} loading="lazy" />
+                        </div>
                     ))}
                 </div>
             </div>
@@ -96,7 +62,8 @@ const PhotoGallery: React.FC = () => {
             <ImageModal 
                 isOpen={isModalOpen}
                 onClose={closeModal}
-                imageUrl={selectedImageIndex !== null ? galleryImages[selectedImageIndex] : ''}
+                imageUrl={selectedImageIndex !== null ? galleryImages[selectedImageIndex].src : ''}
+                caption={selectedImageIndex !== null ? galleryImages[selectedImageIndex].caption : ''}
                 onPrev={showPrevModalImage}
                 onNext={showNextModalImage}
                 hasPrev={galleryImages.length > 1}

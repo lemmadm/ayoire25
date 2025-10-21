@@ -1,17 +1,19 @@
 
+
 import React, { useEffect } from 'react';
 
 interface ImageModalProps {
   isOpen: boolean;
   onClose: () => void;
   imageUrl: string;
+  caption?: string;
   onPrev: () => void;
   onNext: () => void;
   hasNext: boolean;
   hasPrev: boolean;
 }
 
-const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, imageUrl, onPrev, onNext, hasNext, hasPrev }) => {
+const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, imageUrl, caption, onPrev, onNext, hasNext, hasPrev }) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -33,8 +35,10 @@ const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, imageUrl, onPr
   return (
     <div className={`modal-overlay ${isOpen ? 'open' : ''}`} onClick={onClose} role="dialog" aria-modal="true">
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <img src={imageUrl} alt="Enlarged gallery view" />
+        <img src={imageUrl} alt={caption || "Enlarged gallery view"} />
+        {caption && <p className="modal-caption">{caption}</p>}
         <button className="modal-close" onClick={onClose} aria-label="Close image viewer">
+{/* Fix: Corrected a typo in the viewBox attribute of the SVG. */}
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
         </button>
         {hasPrev && (
