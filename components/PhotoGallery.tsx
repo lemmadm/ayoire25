@@ -11,7 +11,7 @@ const galleryImages = [
     { src: '/images/IMG_9182.JPG', caption: 'First of all Introduction' },
     { src: '/images/IMG_9233.JPG', caption: 'Will you marry me' },
     { src: '/images/IMG_9322.JPG', caption: 'I Love You my Dear' },
-    { src: '/images/IMG_9240.JPG', caption: 'She said Yes' },
+    { src: '/images/IMG_9240.jpg', caption: 'She said Yes' },
 ];
 
 const PhotoGallery: React.FC = () => {
