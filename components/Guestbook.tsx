@@ -8,8 +8,8 @@ const Guestbook: React.FC = () => {
   // 1. In Airtable, open the view you want to embed (e.g., your form or gallery).
   // 2. Click "Share view" -> "Embed this view on your site".
   // 3. Copy the `src` attribute from the generated iframe code and paste it below.
-  const formEmbedSrc = "https://airtable.com/embed/shrDFRj15Hn22aN5I"; 
-  const galleryEmbedSrc = "https://airtable.com/embed/shr1s8k2pXp3eF4mH";
+  const formEmbedSrc = "https://airtable.com/embed/appl2ogibPgudIla5/shr2RQFaW4XZUMGk3"; 
+  const galleryEmbedSrc = "https://airtable.com/embed/appl2ogibPgudIla5/shrkuABtfy2L2uFEd?viewControls=on";
 
   return (
     <SectionWrapper id="guestbook" className="bg-cream text-chocolate">
