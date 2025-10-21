@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="images/png" href="/images/fav.png" />	
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- SEO and Social Sharing Meta Tags -->
@@ -15,14 +15,14 @@
     <meta property="og:url" content="https://myevent.i.ng" />
     <meta property="og:title" content="Funmilayo & Damilare's Wedding | #AYDIRE25" />
     <meta property="og:description" content="Celebrating the wedding of Funmilayo Gbolasere and Damilare Afeniforo. Find all the details for our special day!" />
-    <meta property="og:image" content="images/SEO.jpg" />
+    <meta property="og:image" content="https://picsum.photos/seed/weddinglove1/1200/630" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://myevent.i.ng" />
     <meta property="twitter:title" content="Funmilayo & Damilare's Wedding | #AYDIRE25" />
     <meta property="twitter:description" content="Celebrating the wedding of Funmilayo Gbolasere and Damilare Afeniforo. Find all the details for our special day!" />
-    <meta property="twitter:image" content="images/SEO.jpg" />
+    <meta property="twitter:image" content="https://picsum.photos/seed/weddinglove1/1200/630" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -163,6 +163,14 @@
         overflow: hidden; /* For hover effect */
         border-radius: 0.5rem;
         box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        /* --- Animation --- */
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+        transition: opacity 0.6s cubic-bezier(0.17, 0.55, 0.55, 1), transform 0.6s cubic-bezier(0.17, 0.55, 0.55, 1);
+      }
+      .masonry-item.is-visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
       }
       .masonry-item img {
         width: 100%;
@@ -328,6 +336,87 @@
         animation: contentFadeIn 0.5s ease-out forwards;
       }
 
+      /* Countdown Timer Animation */
+      @keyframes tick {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-tick {
+        animation: tick 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      }
+
+      /* Preloader */
+      .preloader {
+        position: fixed;
+        inset: 0;
+        background-color: #4A2C2A;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+      }
+      .preloader.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .preloader-content {
+        font-family: 'Playfair Display', serif;
+        font-size: 4rem;
+        color: #D4AF37;
+        animation: pulse 2s infinite ease-in-out;
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.1); opacity: 0.7; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+
+      /* Flipping Card for Q&A */
+      .flip-card {
+        background-color: transparent;
+        perspective: 1000px;
+        cursor: pointer;
+      }
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+      }
+      .flip-card.flipped .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      }
+      .flip-card-front {
+        background-color: white;
+      }
+      .flip-card-back {
+        background-color: white;
+        transform: rotateY(180deg);
+      }
+
     </style>
   <script type="importmap">
 {
@@ -341,6 +430,9 @@
 <link rel="stylesheet" href="/index.css">
 </head>
   <body>
+    <div class="preloader">
+      <div class="preloader-content">F & D</div>
+    </div>
     <div class="scroll-watcher"></div>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>

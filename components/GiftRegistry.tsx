@@ -25,7 +25,7 @@ const GiftRegistry: React.FC = () => {
                 </p>
                 
                 <div className="bg-cream text-chocolate p-8 rounded-lg shadow-xl inline-block">
-                    <h3 className="font-playfair text-2xl font-bold mb-2">Our Account Details</h3>
+                    <h3 className="font-playfair text-2xl font-bold mb-2">Account Details</h3	>
                     <p className="font-montserrat text-base sm:text-lg"><span className="font-bold">Account Name:</span> Gbolasere Funmilayo Omowumi</p>
                     <p className="font-montserrat text-base sm:text-lg"><span className="font-bold">Bank:</span> Polaris Bank</p>
                     <div className="mt-4 flex items-center justify-center space-x-4">

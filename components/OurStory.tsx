@@ -90,11 +90,11 @@ const OurStory: React.FC = () => {
                     <div key={activeTab} className="bg-white p-6 md:p-8 rounded-lg shadow-xl text-left animate-content-fade-in">
                         <h3 className="font-playfair text-3xl font-bold gold-text mb-2">{activeTab === 'his' ? 'His Story' : 'Her Story'}</h3>
                         <p className="font-montserrat italic text-md mb-6 text-gray-500">- By {authorName}</p>
-                        <div className="space-y-6">
+                        <div className="space-y-8">
                             {storiesToDisplay.map((story, index) => (
                                 <div key={`${activeTab}-${index}`}>
                                     <h4 className="font-playfair text-xl font-bold text-chocolate">{story.title}</h4>
-                                    <p className="font-montserrat text-gray-600 text-sm md:text-base leading-relaxed mt-1">{story.content}</p>
+                                    <p className="font-montserrat text-gray-600 text-sm md:text-base leading-relaxed mt-2">{story.content}</p>
                                 </div>
                             ))}
                         </div>

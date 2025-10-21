@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionWrapper from './SectionWrapper';
+import SocialShareButtons from './SocialShareButtons';
 
 const EventDetails: React.FC = () => {
     const venue = "Honey Treat Trade, Academy, Monatan Road, Ibadan";
@@ -63,8 +64,21 @@ const EventDetails: React.FC = () => {
                         <p className="font-montserrat text-base sm:text-lg">Elijah - 09022606871</p>
                     </div>
                 </div>
+                
+                {/* NEW SOCIAL SHARE SECTION */}
+                <div className="mt-16 max-w-2xl mx-auto">
+                    <h3 className="font-playfair text-2xl font-bold gold-text mb-4">Share The Joy</h3>
+                    <p className="font-montserrat text-base md:text-lg mb-6 leading-relaxed">
+                        Help us spread the word! Share our special day with your friends and family.
+                    </p>
+                    <SocialShareButtons 
+                        url="https://myevent.i.ng"
+                        title="Join us to celebrate the wedding of Funmilayo & Damilare!"
+                        hashtags="AYDIRE25"
+                    />
+                </div>
 
-                <div className="mt-12">
+                <div className="mt-16">
                     <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="inline-block bg-[#D4AF37] text-chocolate font-bold py-3 px-8 rounded-full uppercase tracking-wider hover:bg-[#b89b3f] transition-colors duration-300">
                         Get Directions
                     </a>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { QnA } from '../types';
 import SectionWrapper from './SectionWrapper';
 
@@ -10,6 +10,14 @@ const MoreAboutUs: React.FC = () => {
         { question: "What's your favorite activity together?", answer: "Our favorite activity together was talking and going to the mountain together." },
     ];
 
+    const [flippedStates, setFlippedStates] = useState<boolean[]>(Array(qnaData.length).fill(false));
+
+    const handleFlip = (index: number) => {
+        const newFlippedStates = [...flippedStates];
+        newFlippedStates[index] = !newFlippedStates[index];
+        setFlippedStates(newFlippedStates);
+    };
+
     return (
         <SectionWrapper id="more-about-us" className="bg-cream text-chocolate">
             <div className="container mx-auto text-center">
@@ -18,13 +26,20 @@ const MoreAboutUs: React.FC = () => {
                 >
                   More About Us
                 </h2>
-                <p className="font-montserrat text-base md:text-lg max-w-3xl mx-auto mb-16 leading-relaxed">A little glimpse into our hearts and what we cherish.</p>
+                <p className="font-montserrat text-base md:text-lg max-w-3xl mx-auto mb-16 leading-relaxed">A little glimpse into our hearts and what we cherish. Tap a card to find out!</p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     {qnaData.map((item, index) => (
-                        <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-left">
-                            <h3 className="font-playfair text-xl font-bold gold-text mb-2">{item.question}</h3>
-                            <p className="font-montserrat text-gray-700 text-sm md:text-base leading-relaxed">{item.answer}</p>
+                        <div key={index} className={`flip-card h-56 ${flippedStates[index] ? 'flipped' : ''}`} onClick={() => handleFlip(index)}>
+                            <div className="flip-card-inner">
+                                <div className="flip-card-front">
+                                    <h3 className="font-playfair text-xl font-bold gold-text mb-2 text-center">{item.question}</h3>
+                                    <p className="font-montserrat text-xs mt-4 text-gray-400">Click to reveal</p>
+                                </div>
+                                <div className="flip-card-back">
+                                    <p className="font-montserrat text-gray-700 text-sm md:text-base leading-relaxed">{item.answer}</p>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>

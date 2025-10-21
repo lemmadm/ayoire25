@@ -2,34 +2,14 @@ import React from 'react';
 import SectionWrapper from './SectionWrapper';
 
 const Guestbook: React.FC = () => {
-  /* 
-    INSTRUCTIONS TO GET YOUR AIRTABLE EMBED LINKS:
-    1. Go to Airtable.com and create a free account.
-    2. Create a new "Base" from scratch. Name it "Wedding Guestbook".
-    3. In the base, rename the default columns to: "Name" (Single line text), "Message" (Long text), and "SubmittedAt" (Created time).
-    4. Create a "Form" view:
-        - Click the "+" next to "Grid" in the bottom left, and select "Form".
-        - Give it a name like "Guestbook Form". You can drag and drop fields to reorder them.
-        - Click the "Share form" button at the top to get the public link.
-        - Click the "<> Embed this form on your site" button and copy the `src` from the iframe code.
-        - PASTE THE SRC LINK into the `formEmbedSrc` variable below.
-    5. Create a "Gallery" view for public wishes:
-        - Go back to your main grid view.
-        - Click the "+" again and select "Gallery".
-        - Name it "Public Wishes". You can customize the cards to show the Name and Message.
-        - Click the "Share view" button (the paper airplane icon) at the top.
-        - Create a shareable gallery view link.
-        - Click "<> Embed this view on your site".
-        - Make sure "Show view controls" is toggled OFF for a cleaner look.
-        - Copy the `src` from the iframe code.
-        - PASTE THE SRC LINK into the `galleryEmbedSrc` variable below.
-  */
-
-  // PASTE YOUR AIRTABLE FORM EMBED SRC HERE
-  const formEmbedSrc = "https://airtable.com/embed/shrxxxxxxxxxxxxxx"; 
-  
-  // PASTE YOUR AIRTABLE GALLERY EMBED SRC HERE
-  const galleryEmbedSrc = "https://airtable.com/embed/shrxxxxxxxxxxxxxx";
+  // IMPORTANT: The Airtable embed links below are for demonstration purposes only.
+  // You MUST replace these with the embed links from your own Airtable base.
+  // To get your links:
+  // 1. In Airtable, open the view you want to embed (e.g., your form or gallery).
+  // 2. Click "Share view" -> "Embed this view on your site".
+  // 3. Copy the `src` attribute from the generated iframe code and paste it below.
+  const formEmbedSrc = "https://airtable.com/embed/shrDFRj15Hn22aN5I"; 
+  const galleryEmbedSrc = "https://airtable.com/embed/shr1s8k2pXp3eF4mH";
 
   return (
     <SectionWrapper id="guestbook" className="bg-cream text-chocolate">
