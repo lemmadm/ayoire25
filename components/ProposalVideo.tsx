@@ -3,7 +3,7 @@ import SectionWrapper from './SectionWrapper';
 
 const ProposalVideo: React.FC = () => {
   // Google Drive embed link for the proposal video
-  const videoSrc = "https://drive.google.com/file/d/1xT9oEvVQaDGcxTLey_D6Nn5W-caPya4X/preview"; 
+  const videoSrc = "https://youtube.com/shorts/7s8NASlQO38?feature=share"; 
 
   return (
     <SectionWrapper id="proposal-video" className="bg-cream text-chocolate">
