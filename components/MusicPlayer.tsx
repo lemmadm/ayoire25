@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const musicUrl = "https://music.youtube.com/watch?v=dG45Sm6PYM0&si=D8nMPqdVzPW6nqL3"; // A romantic, royalty-free track
+const musicUrl = "https://www.youtube.com/embed/7s8NASlQO38";
 
 const MusicPlayer: React.FC = () => {
     const [isPlaying, setIsPlaying] = useState(false);
