@@ -9,7 +9,6 @@ const Guestbook: React.FC = () => {
   // 2. Click "Share view" -> "Embed this view on your site".
   // 3. Copy the `src` attribute from the generated iframe code and paste it below.
   const formEmbedSrc = "https://airtable.com/embed/shrDFRj15Hn22aN5I"; 
-  const galleryEmbedSrc = "https://airtable.com/embed/shr1s8k2pXp3eF4mH";
 
   return (
     <SectionWrapper id="guestbook" className="bg-cream text-chocolate">
@@ -31,21 +30,6 @@ const Guestbook: React.FC = () => {
           ></iframe>
         </div>
         
-        <div className="mt-20">
-            <h3 className="font-playfair text-3xl md:text-4xl font-bold gold-text">
-                A Wall of Wishes
-            </h3>
-            <p className="font-montserrat text-base md:text-lg max-w-2xl mx-auto mt-2 mb-10 leading-relaxed">
-                Thank you for all the love and support from our amazing family and friends.
-            </p>
-            <div className="guestbook-embed-container">
-                 <iframe
-                    className="guestbook-gallery-embed"
-                    src={galleryEmbedSrc}
-                    title="Guestbook Wishes"
-                ></iframe>
-            </div>
-        </div>
 
       </div>
     </SectionWrapper>
