@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 import Countdown from './Countdown';
 
 const backgroundImages = [
-  'public/images/HERO-IMG_9822.JPG',
-  'public/images/HERO-IMG_9885.JPG',
-  'public/images/HERO-IMG_9928.JPG',
+  '/images/HERO-IMG_9822.JPG',
+  '/images/HERO-IMG_9885.JPG',
+  '/images/HERO-IMG_9928.JPG',
 ];
 
 // Fallback images in case the primary ones fail to load
 const fallbackBackgroundImages = [
-  'https://drive.google.com/file/d/1HWj_YTJ3VWqKzAbA3LB_t3c778pZXs8v/view?usp=drive_link',
-  'https://drive.google.com/file/d/1FlR7Mn_PwehZoCBzcIB__BJePFnWUIJB/view?usp=drive_link',
-  'https://drive.google.com/file/d/1eOXCw_qPW53ASAjYyrtNl9hkFwYf7p4p/view?usp=drive_link',
+  'https://drive.google.com/file/d/1HWj_YTJ3VWqKzAbA3LB_t3c778pZXs8v/view?usp=sharing',
+  'https://drive.google.com/file/d/1FlR7Mn_PwehZoCBzcIB__BJePFnWUIJB/view?usp=sharing',
+  'https://drive.google.com/file/d/1eOXCw_qPW53ASAjYyrtNl9hkFwYf7p4p/view?usp=sharing',
 ];
 
 const Hero: React.FC = () => {

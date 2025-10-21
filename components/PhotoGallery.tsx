@@ -3,14 +3,15 @@ import SectionWrapper from './SectionWrapper';
 import ImageModal from './ImageModal';
 
 const galleryImages = [
-    { src: 'https://drive.google.com/file/d/1maqwtKOa0s0Em2o15xGnji0P056VQyX1/view?usp=drive_link', caption: 'Moment of Proposal' },
-    { src: 'https://drive.google.com/file/d/1XqKrOxfWj6ofwChsheXzPo5tY2XMNPDL/view?usp=drive_link', caption: 'Behold Love in the Eyes' },
-    { src: 'https://drive.google.com/file/d/19Kh4wje71_oHUWZO5Ax6Z8tlYKmAaOSA/view?usp=drive_link', caption: 'At the sholder of Trust' },
-    { src: 'https://drive.google.com/file/d/1Jq-kP6yuF7GAGRtH7xi_9r7mDd6oK1e1/view?usp=drive_link', caption: 'Perfect Match' },
-    { src: 'https://drive.google.com/file/d/1GjvfcLjh9W2n8teDgAi1tOGut6ekKs7v/view?usp=drive_link', caption: 'Joy of the Heart' },
-    { src: 'https://drive.google.com/file/d/1J1lKwMklPcm4Y2444eLiOi1T3f33_exI/view?usp=drive_link', caption: 'First of all Introduction' },
-    { src: 'https://drive.google.com/file/d/1PoeLO84-CKgEkYyEjeOuGbUSAgkkHhyV/view?usp=drive_link', caption: 'Will you marry me' },
-    { src: 'https://drive.google.com/file/d/1oO3v8iwZ1nltJQgJshY8qNweN0NMl-IU/view?usp=drive_link', caption: 'I Love You my Dear' },
+    { src: '/images/IMG_9322.JPG', caption: 'Moment of Proposal' },
+    { src: '/images/IMG_9960.JPG', caption: 'Behold Love in the Eyes' },
+    { src: '/images/IMG_9818.JPG', caption: 'At the sholder of Trust' },
+    { src: '/images/IMG_9913.JPG', caption: 'Perfect Match' },
+    { src: '/images/IMG_9943.JPG', caption: 'Joy of the Heart' },
+    { src: '/images/IMG_9182.JPG', caption: 'First of all Introduction' },
+    { src: '/images/IMG_9233.JPG', caption: 'Will you marry me' },
+    { src: '/images/IMG_9322.JPG', caption: 'I Love You my Dear' },
+    { src: '/images/IMG_9240.JPG', caption: 'She said Yes' },
 ];
 
 const PhotoGallery: React.FC = () => {
