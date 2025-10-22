@@ -211,26 +211,15 @@
         width: 100%;
         max-width: 800px;
         margin: 2rem auto 0 auto;
-        /* The container now only handles layout, styling is on the iframe */
+        height: 800px;
+        max-height: 85vh; /* Ensure it fits well on various screen heights */
       }
       .guestbook-embed-container iframe {
         width: 100%;
+        height: 100%;
         border: none;
-        border-radius: 0.75rem; /* A slight border-radius */
-        box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* A subtle shadow to lift the element */
-      }
-      .guestbook-form-embed {
-        height: 520px;
-      }
-      @media (min-width: 768px) {
-        .guestbook-form-embed {
-          height: 420px;
-        }
-      }
-      .guestbook-gallery-embed {
-         /* Adjust height as needed, or use aspect-ratio */
-        aspect-ratio: 1 / 1.2;
-        min-height: 600px;
+        border-radius: 0.75rem;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
       }
 
       /* Image Modal */
@@ -427,7 +416,6 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div class="preloader">
